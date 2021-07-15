@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { useSelector } from 'react-redux';
 
 const MapArea = () => {
+  const { restaurant } = useSelector((state) => state.map);
+
+  // useEffect(() => {
+  //   console.log(restaurants);
+  // }, [restaurants]);
+
   const [currentPosition, setCurrentPosition] = useState({});
 
+  //Monstar lab Bangladesh latlng
   // 23.78146816410938, 90.40048221907503
 
   const success = (position) => {
@@ -24,15 +32,25 @@ const MapArea = () => {
   };
 
   return (
-    <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_API_TOKEN}>
-      <GoogleMap
-        mapContainerStyle={mapStyles}
-        zoom={13}
-        center={currentPosition}
-      >
-        {currentPosition && <Marker position={currentPosition} />}
-      </GoogleMap>
-    </LoadScript>
+    <div>
+      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_API_TOKEN}>
+        <GoogleMap
+          mapContainerStyle={mapStyles}
+          zoom={13}
+          center={restaurant?.location || currentPosition}
+        >
+          {currentPosition && <Marker position={currentPosition} />}
+
+          {restaurant && (
+            <Marker
+              position={restaurant.location}
+              icon='https://img.icons8.com/fluent/48/000000/location-update.png'
+              title={restaurant?.name}
+            />
+          )}
+        </GoogleMap>
+      </LoadScript>
+    </div>
   );
 };
 
