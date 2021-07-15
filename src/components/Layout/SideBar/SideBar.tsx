@@ -5,16 +5,24 @@ import { toggleSearching } from '../../../redux/actions/interaction';
 import {
   findRandomRestaurant,
   findRestaurants,
-} from '../../../redux/actions/map';
+} from '../../../redux/actions/restaurants';
 import SearchRestaurant from '../../SearchRestaurant/SearchRestaurant';
+
+interface InteractionRootState {
+  interaction: {
+    isSearching: Boolean;
+  };
+}
 
 const SideBar = () => {
   const dispatch = useDispatch();
   const [searchText, setSearchText] = useState(null);
   // const [isSearching, setIsSearching] = useState(false):
-  const { isSearching } = useSelector((state) => state.interaction);
+  const { isSearching } = useSelector(
+    (state: InteractionRootState) => state.interaction
+  );
 
-  let initialData = {
+  let initialData: Object = {
     clientId: process.env.REACT_APP_FOURSQUARE_CLIENT_ID,
     clientSecret: process.env.REACT_APP_FOURSQUARE_CLIENT_SECRET,
     v: '20180323',

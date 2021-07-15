@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import map from './map';
+import restaurants from './restaurants';
 import interaction from './interaction';
 
-export default combineReducers({ map, interaction });
+export default combineReducers({ restaurants, interaction });
