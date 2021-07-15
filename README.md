@@ -1,8 +1,17 @@
-# Getting Started with Create React App
+## Getting Started with Restaurant Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## After cloning
 
-## Available Scripts
+Install the dependencies using:
+
+### `npm install`
+
+Then create your .env file with the following env variables:
+
+REACT_APP_GOOGLE_API_TOKEN = "GoogleApiToken"
+REACT_APP_FOURSQUARE_CLIENT_ID = "FoursquareClientId"
+REACT_APP_FOURSQUARE_CLIENT_SECRET = "FoursquareClientSecret"
+REACT_APP_FOURSQUARE_BASEURL = "api route for foursquare"
 
 In the project directory, you can run:
 
@@ -31,40 +40,24 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Reason for technical choices
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**React JS**
+Regardless of being a requirement for this assignment. I always opt for react because of how speedy, realiable and
+easy to understand it is. The component based structure and more perks like HOCs, custom hooks and also newly added
+hooks all help into making React one of the best frontend framework.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Redux**
+Redux is my primary choice for application state management. It solves a big problemm in React which is "Prop Drilling" an issue where we need to pass a state several layers deep to have access to it. With Redux we can maintain a central store that can be accessed by any component. With the addition of react-redux hooks: useSelector and useDispatch, it makes life much easier. Even though Redux has some boiler plate code I have gotten comfortable using it over the years.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**TypeScript**
+Javascript being untyped can cause unwanted errors down the line and TypeScript as a superset lets us define types for our variables. Now that we have all the benefit of Typed language it also helps prevent silly mistakes that can be left in the code without a trace.
 
-## Learn More
+**Tailwind CSS**
+I have always been working with custom CSS and am super used to it. I like the idea of having complete control of everything I design even if it can be a lot of extra work. Being skeptical of using CSS frameworks lately I'm giving tailwind CSS a try and I like it so far. I chose Tailwind for this project not just to speed things up but mainly so I can practice getting used to it a bit.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Axios**
+Axios is what I have been using for evey other project and for no particular reason. I am just used to the flow of writing requests in axios.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**SASS**
+As I prefer writing custom CSS, SASS is amazing as it lets us write nestes CSS and more perks like mixins. I didn't need to write much SASS for this project but if I needed to write custom CSS for a specific section/purpose that tailwind alone can't solve this is what I prefer.
