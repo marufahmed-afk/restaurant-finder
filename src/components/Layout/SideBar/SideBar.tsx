@@ -16,7 +16,6 @@ interface InteractionRootState {
 
 const SideBar = () => {
   const dispatch = useDispatch();
-  const [searchText, setSearchText] = useState(null);
   // const [isSearching, setIsSearching] = useState(false):
   const { isSearching } = useSelector(
     (state: InteractionRootState) => state.interaction
@@ -43,17 +42,21 @@ const SideBar = () => {
   };
 
   return (
-    <div className='bg-gray-600'>
-      <button className='btn' onClick={handleRandom}>
-        Random
-      </button>
+    <>
+      <div className='p-3 grid place-items-center'>
+        <div className=''>
+          <button className='btn' onClick={handleRandom}>
+            Random
+          </button>
 
-      <button className='btn' onClick={toggleSearch}>
-        Search
-      </button>
+          <button className='btn ml-4' onClick={toggleSearch}>
+            Search
+          </button>
+        </div>
 
-      {isSearching && <SearchRestaurant initialData={initialData} />}
-    </div>
+        {isSearching && <SearchRestaurant initialData={initialData} />}
+      </div>
+    </>
   );
 };
 

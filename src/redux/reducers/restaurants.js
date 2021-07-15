@@ -44,6 +44,9 @@ export default function (state = initialState, { type, payload }) {
     case T.SELECT_RESTAURANT:
       return { ...state, restaurant: payload, loading: false };
 
+    case T.CLEAR_SEARCH_RESUTLS:
+      return { ...state, restaurants: null, loading: false };
+
     default:
       return state;
   }

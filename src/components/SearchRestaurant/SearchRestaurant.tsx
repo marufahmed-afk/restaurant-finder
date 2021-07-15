@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { findRestaurants } from '../../redux/actions/restaurants';
+import {
+  clearSearchResults,
+  findRestaurants,
+} from '../../redux/actions/restaurants';
 import SearchResults from './SearchResults/SearchResults';
 
 interface SearchRestaurantProps {
@@ -12,17 +15,27 @@ const SearchRestaurant: React.FC<SearchRestaurantProps> = ({
 }: SearchRestaurantProps) => {
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    // currently just to clear the results on unmount
+    return () => {
+      dispatch(clearSearchResults());
+    };
+  }, []);
+
   // for finding a restaurant based on search query
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(findRestaurants(initialData, e.target.value));
   };
 
   return (
-    <div className='relative'>
-      <input type='text' onChange={handleSearch} />
-      <div className='absolute z-10 w-3/4 bg-white'>
-        <SearchResults />
-      </div>
+    <div className='relative w-full grid place-items-center mt-3'>
+      <input
+        className='border-2 rounded w-full max-w-lg p-3'
+        type='text'
+        onChange={handleSearch}
+      />
+
+      <SearchResults />
     </div>
   );
 };

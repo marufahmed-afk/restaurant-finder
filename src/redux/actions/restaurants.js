@@ -75,3 +75,7 @@ export const selectRestaurant = (restaurant) => ({
   type: t.SELECT_RESTAURANT,
   payload: restaurant,
 });
+
+export const clearSearchResults = () => ({
+  type: t.CLEAR_SEARCH_RESUTLS,
+});

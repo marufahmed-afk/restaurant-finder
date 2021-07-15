@@ -34,7 +34,7 @@ const MapArea = () => {
   };
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(success);
+    navigator.geolocation?.getCurrentPosition(success);
   }, []);
 
   const mapStyles = {
