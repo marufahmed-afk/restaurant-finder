@@ -16,22 +16,13 @@ const MapArea = () => {
     (state: RestaurantsRootState) => state.restaurants
   );
 
-  const [currentPosition, setCurrentPosition] = useState({});
-
   //Monstar lab Bangladesh latlng
   // 23.78146816410938, 90.40048221907503
 
-  const success = () => {
-    const currentPosition = {
-      lat: 23.78146816410938,
-      lng: 90.40048221907503,
-    };
-    setCurrentPosition(currentPosition);
+  const currentPosition = {
+    lat: 23.78146816410938,
+    lng: 90.40048221907503,
   };
-
-  useEffect(() => {
-    navigator.geolocation?.getCurrentPosition(success);
-  }, []);
 
   const mapStyles = {
     height: '80vh',
