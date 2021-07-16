@@ -9,7 +9,7 @@ interface InteractionRootState {
   };
 }
 
-const SideBar = () => {
+const Options = () => {
   const dispatch = useDispatch();
   // const [isSearching, setIsSearching] = useState(false):
   const { isSearching } = useSelector(
@@ -55,4 +55,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default Options;

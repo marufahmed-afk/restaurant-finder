@@ -1,5 +1,5 @@
 import './App.scss';
-import SideBar from './components/Layout/SideBar/SideBar';
+import Options from './components/Layout/Options/Options';
 import Home from './components/Home/Home';
 
 //Redux
@@ -13,7 +13,7 @@ function App() {
       <div className='App h-screen'>
         <div className=' text-black font-font1 h-full'>
           <div>
-            <SideBar />
+            <Options />
             <Home />
             <SelectedRestaurant />
           </div>
