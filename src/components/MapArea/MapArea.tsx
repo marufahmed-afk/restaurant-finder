@@ -16,10 +16,6 @@ const MapArea = () => {
     (state: RestaurantsRootState) => state.restaurants
   );
 
-  // useEffect(() => {
-  //   console.log(restaurants);
-  // }, [restaurants]);
-
   const [currentPosition, setCurrentPosition] = useState({});
 
   //Monstar lab Bangladesh latlng

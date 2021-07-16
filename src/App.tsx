@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 //Redux
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import SelectedRestaurant from './components/SelectedRestaurant/SelectedRestaurant';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <div>
             <SideBar />
             <Home />
+            <SelectedRestaurant />
           </div>
         </div>
       </div>

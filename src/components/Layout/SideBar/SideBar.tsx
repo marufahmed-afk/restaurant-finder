@@ -1,11 +1,6 @@
-import React from 'react';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleSearching } from '../../../redux/actions/interaction';
-import {
-  findRandomRestaurant,
-  findRestaurants,
-} from '../../../redux/actions/restaurants';
+import { findRandomRestaurant } from '../../../redux/actions/restaurants';
 import SearchRestaurant from '../../SearchRestaurant/SearchRestaurant';
 
 interface InteractionRootState {
