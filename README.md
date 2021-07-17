@@ -53,6 +53,9 @@ Redux is my primary choice for application state management. It solves a big pro
 **TypeScript**
 Javascript being untyped can cause unwanted errors down the line and TypeScript as a superset lets us define types for our variables. Now that we have all the benefit of Typed language it also helps prevent silly mistakes that can be left in the code without a trace.
 
+**React Testing Library**
+I spent some time learning unit/integration testing in ReactJS. I tinkered with Jest+Enzyme for a bit then I found React Testing Library which comes in built with latest ReactJS. I found it easier for writing the tests as it was more understandable.
+
 **Tailwind CSS**
 I have always been working with custom CSS and am super used to it. I like the idea of having complete control of everything I design even if it can be a lot of extra work. Being skeptical of using CSS frameworks lately I'm giving tailwind CSS a try and I like it so far. I chose Tailwind for this project not just to speed things up but mainly so I can practice getting used to it a bit.
 
@@ -61,3 +64,7 @@ Axios is what I have been using for evey other project and for no particular rea
 
 **SASS**
 As I prefer writing custom CSS, SASS is amazing as it lets us write nestes CSS and more perks like mixins. I didn't need to write much SASS for this project but if I needed to write custom CSS for a specific section/purpose that tailwind alone can't solve this is what I prefer.
+
+## What I'd do differently
+
+If I was to work on this project for a longer period of time, I would write improved automated unit/integrated tests and also try end-to-end test using Cypress. As I am fairly new to TypeScript I would try to improve my typescript code and also would improve my code by applying SOLID principles more strictly.
