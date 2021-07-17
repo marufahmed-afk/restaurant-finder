@@ -1,6 +1,8 @@
 import axios from '../axios';
 import * as t from '../types';
 
+import * as api from '../../api/index';
+
 export const findRandomRestaurant = (initialData) => async (dispatch) => {
   const { clientId, clientSecret, ll, v, radius, categoryId } = initialData;
 
@@ -9,9 +11,9 @@ export const findRandomRestaurant = (initialData) => async (dispatch) => {
   });
 
   try {
-    const res = await axios.get(
-      `/venues/search?client_id=${clientId}&client_secret=${clientSecret}&ll=${ll}&categoryId=${categoryId}&v=${v}&radius=${radius}`
-    );
+    const url = `/venues/search?client_id=${clientId}&client_secret=${clientSecret}&ll=${ll}&categoryId=${categoryId}&v=${v}&radius=${radius}`;
+
+    const res = await api.searchRestaurants(url);
 
     console.log('restaurant data: ', res.data);
 
@@ -45,9 +47,9 @@ export const findRestaurants =
     });
 
     try {
-      const res = await axios.get(
-        `/venues/search?client_id=${clientId}&client_secret=${clientSecret}&ll=${ll}&categoryId=${categoryId}&v=${v}&radius=${radius}&query=${query}`
-      );
+      const url = `/venues/search?client_id=${clientId}&client_secret=${clientSecret}&ll=${ll}&categoryId=${categoryId}&v=${v}&radius=${radius}&query=${query}`;
+
+      const res = await api.searchRestaurants(url);
 
       console.log('found restaurant data: ', res.data);
 
