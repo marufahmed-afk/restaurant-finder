@@ -32,7 +32,7 @@ const MapArea = () => {
   const key = process.env.REACT_APP_GOOGLE_API_TOKEN;
 
   return key ? (
-    <div>
+    <div data-testid='maparea'>
       <LoadScript googleMapsApiKey={key}>
         <GoogleMap
           mapContainerStyle={mapStyles}
@@ -52,7 +52,9 @@ const MapArea = () => {
       </LoadScript>
     </div>
   ) : (
-    <h1 className='text-xl'>Google API key was not found!</h1>
+    <div data-testid='maparea'>
+      <h1 className='text-xl'>Google API key was not found!</h1>
+    </div>
   );
 };
 

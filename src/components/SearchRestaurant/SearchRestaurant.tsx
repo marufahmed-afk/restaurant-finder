@@ -32,6 +32,7 @@ const SearchRestaurant: React.FC<SearchRestaurantProps> = ({
       <input
         className='border-2 rounded w-full max-w-lg p-3'
         type='text'
+        placeholder='Start typing restaurant name...'
         onChange={handleSearch}
       />
 

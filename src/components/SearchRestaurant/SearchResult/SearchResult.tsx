@@ -20,13 +20,11 @@ const SearchResult: React.FC<SearchResultProps> = ({
   };
 
   return (
-    <div>
-      <div
-        className='text-sm md:text-base cursor-pointer'
-        onClick={handleSelected}
-      >
-        {restaurant.name}
-      </div>
+    <div
+      className='text-sm md:text-base cursor-pointer'
+      onClick={handleSelected}
+    >
+      {restaurant.name}
     </div>
   );
 };
